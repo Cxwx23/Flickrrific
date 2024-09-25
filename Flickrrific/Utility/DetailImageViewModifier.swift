@@ -1,21 +1,19 @@
 //
-//  ImageViewModifier.swift
+//  DetailImageViewModifier.swift
 //  Flickrrific
 //
 //  Created by Cole Warner on 9/25/24.
 //
 
-import Foundation
 import SwiftUI
 
-struct ImageViewModifier: ViewModifier {
-    
+struct DetailImageViewModifier: ViewModifier {
     var screenWidth: CGFloat {
         UIScreen.main.bounds.width
     }
     
     var frameWidth: CGFloat {
-        (screenWidth - 40.0) / 3
+        screenWidth - 20.0
     }
     
     var frameHeight: CGFloat {
@@ -23,10 +21,10 @@ struct ImageViewModifier: ViewModifier {
     }
     
     func body(content: Content) -> some View {
-        content                            
+        content
             .aspectRatio(contentMode: .fill)
             .scaledToFill()
-            .frame(width: frameWidth, height: frameHeight)
+            .frame(maxWidth: .infinity, maxHeight: 300)
             .background(Color.black.opacity(0.3))
             .clipped()
             .cornerRadius(10)
@@ -35,11 +33,12 @@ struct ImageViewModifier: ViewModifier {
                 radius: 5,
                 x: 0,
                 y: 4)
+            .padding()
     }
 }
 
 extension View {
-    func imageFormatting() -> some View {
-        modifier(ImageViewModifier())
+    func detailImageViewModifier() -> some View {
+        modifier(DetailImageViewModifier())
     }
 }

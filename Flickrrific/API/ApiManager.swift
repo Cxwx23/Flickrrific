@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ApiManagerType {
-    func getData<T: Codable>(type: T.Type) async throws -> T?
+    func getData<T: Codable>(type: T.Type, url: String) async throws -> T?
 }
 
 class ApiManager: ApiManagerType {
@@ -16,8 +16,8 @@ class ApiManager: ApiManagerType {
     private init() {}
     
     
-    func getData<T: Codable>(type: T.Type) async throws -> T? {
-        guard let url = URL(string: Url.exampleUrl.rawValue) else {
+    func getData<T: Codable>(type: T.Type, url: String) async throws -> T? {
+        guard let url = URL(string: Url.apiUrl.rawValue + url) else {
             throw ApiError.urlError
         }
         
@@ -29,7 +29,6 @@ class ApiManager: ApiManagerType {
         
         do {
             let decoded = try JSONDecoder().decode(T.self, from: data)
-            print(String(describing: decoded))
             return decoded
         } catch {
             throw ApiError.decodingError
