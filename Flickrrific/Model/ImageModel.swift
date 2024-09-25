@@ -23,7 +23,6 @@ struct ImageDataModel: Codable, Hashable {
     let description: String?
     let published: String?
     let author: String?
-    let tags: String?
 }
 
 struct ImageModel: Codable, Hashable {

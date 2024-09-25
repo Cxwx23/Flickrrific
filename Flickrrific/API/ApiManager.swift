@@ -15,7 +15,6 @@ class ApiManager: ApiManagerType {
     static let shared = ApiManager()
     private init() {}
     
-    
     func getData<T: Codable>(type: T.Type, url: String) async throws -> T? {
         guard let url = URL(string: Url.apiUrl.rawValue + url) else {
             throw ApiError.urlError
