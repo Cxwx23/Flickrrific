@@ -31,6 +31,7 @@ enum ErrorComments: String {
 enum SystemImages: String {
     case photo = "photo"
     case search = "magnifyingglass"
+    case upArrow = "square.and.arrow.up"
 }
 
 // MARK: - Labels

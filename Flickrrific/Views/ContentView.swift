@@ -25,7 +25,7 @@ struct ContentView: View {
                             await getData()
                         }
                     }
-                if viewModel.isLoading {
+                if !viewModel.isLoading {
                     ProgressView()
                 }
                 

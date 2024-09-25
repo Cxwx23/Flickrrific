@@ -52,7 +52,33 @@ struct ImageDetail: View {
                         .padding(.bottom)
                     }
                 }
+                
+                if let urlString = data.media?.m, let imageUrl = URL(string: urlString) {
+                    ShareLink(item: generateShareableContent(from: imageUrl)) {
+                        Label("Share", systemImage: SystemImages.upArrow.rawValue)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                            .shadow(radius: 5)
+                            .padding(.horizontal)
+                            .padding(.top, 20)
+                    }
+                }
             }
         }
+    }
+                              
+    // MARK: - Generate Shareable Content
+    func generateShareableContent(from imageUrl: URL) -> String {
+        let shareableContent = """
+            Title: \(data.title ?? Labels.noData.rawValue)
+            Description: \(data.description ?? Labels.noData.rawValue)
+            Author: \(data.author ?? Labels.noData.rawValue))
+            Published: \(Helpers.shared.formatDate(data.published ?? Labels.noData.rawValue))
+            Image URL: \(imageUrl)
+            """
+        return shareableContent
     }
 }
