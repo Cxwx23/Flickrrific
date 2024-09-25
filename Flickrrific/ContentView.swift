@@ -8,14 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var viewModel = ImageViewModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            VStack {
+                ScrollView {
+                    ImageGrid(dataArray: viewModel.dataArray)
+                }
+            }
+            .toolbar(content: {
+                ToolbarItem(placement: .principal) {
+                    Text("Flickrrific")
+                        .font(.largeTitle)
+                        .fontWeight(.semibold)
+                        .shadow(color: .black.opacity(0.5), radius: 10, x: 0, y: 5)
+}
+            })
         }
-        .padding()
+        .task {
+            await self.viewModel.getImageData()
+        }
     }
 }
 
