@@ -42,15 +42,19 @@ struct ImageGrid: View {
     
     private func getCachedImage(from urlString: String) {
         let key = urlString
-        if Cache.shared.getImage(for: key) == nil, !urlString.isEmpty {
-            guard let url = URL(string: urlString) else {
-                print(ErrorComments.url.rawValue)
-                return
-            }
-            URLSession.shared.dataTask(with: url) { data, response, error in
-                if let data = data, let image = UIImage(data: data) {
-                    Cache.shared.saveImage(image, for: key)
-                }
+        pullImage(from: urlString, for: key)
+    }
+
+    private func pullImage(from urlString: String, for key: String) {
+        if Cache.shared.getImage(for: key) == nil, let url = URL(string: urlString) {
+            putImage(url: url, for: key)
+        }
+    }
+    
+    private func putImage(url: URL, for key: String) {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let data = data, let image = UIImage(data: data) {
+                Cache.shared.saveImage(image, for: key)
             }
         }
     }

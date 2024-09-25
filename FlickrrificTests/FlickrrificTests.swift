@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Foundation
 @testable import Flickrrific
 
 final class FlickrrificTests: XCTestCase {
@@ -24,6 +25,8 @@ final class FlickrrificTests: XCTestCase {
         Task {
             do {
                 testResponse = try await apiManager?.getData(type: ResponseModel.self, url: "")
+                try await Task.sleep(nanoseconds: 1_000_000_000) 
+                XCTAssertNotNil(testResponse)
             }
         }
         
@@ -38,6 +41,8 @@ final class FlickrrificTests: XCTestCase {
         Task {
             do {
                 testResponse = try await apiManager?.getData(type: ResponseModel.self, url: "")
+                try await Task.sleep(nanoseconds: 1_000_000_000)
+                XCTAssertNotNil(testResponse)
             }
         }
         
@@ -52,6 +57,8 @@ final class FlickrrificTests: XCTestCase {
         Task {
             do {
                 testResponse = try await apiManager?.getData(type: ResponseModel.self, url: "")
+                try await Task.sleep(nanoseconds: 1_000_000_000)
+                XCTAssertNotNil(testResponse)
             }
         }
         
@@ -66,6 +73,8 @@ final class FlickrrificTests: XCTestCase {
         Task {
             do {
                 testResponse = try await apiManager?.getData(type: ResponseModel.self, url: "")
+                try await Task.sleep(nanoseconds: 1_000_000_000)
+                XCTAssertNotNil(testResponse)
             }
         }
         
@@ -80,6 +89,8 @@ final class FlickrrificTests: XCTestCase {
         Task {
             do {
                 testResponse = try await apiManager?.getData(type: ResponseModel.self, url: "")
+                try await Task.sleep(nanoseconds: 1_000_000_000)
+                XCTAssertNotNil(testResponse)
             }
         }
         
