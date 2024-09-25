@@ -22,8 +22,9 @@ class Helpers {
         return "N/A"
     }
     
-    func usernameCleanup(title: String) -> String {
-        let username = title
+    //  Removes all characters not in the username from the author
+    func usernameCleanup(author: String) -> String {
+        let username = author
             .replacingOccurrences(of: "nobody@flickr.com (\"", with: "")
             .replacingOccurrences(of: ")", with: "")
             .replacingOccurrences(of: "\")", with: "")

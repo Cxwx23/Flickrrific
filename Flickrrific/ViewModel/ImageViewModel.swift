@@ -12,8 +12,8 @@ class ImageViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     
     /**
-     Parameter: The URL for the API as a String
-     Result: :      Sets the values for the Image data Array
+     Parameter:     The URL for the API as a String
+     Result: :          Sets the values for the Image data Array
      */
     @MainActor
     func getImageData(url: String) async throws {
