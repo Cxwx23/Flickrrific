@@ -18,12 +18,12 @@ class ImageViewModel: ObservableObject {
             if let response = response {
                 self.dataArray = response.items ?? []
             } else {
-                print("No response recieved")
+                print(ErrorComments.response.rawValue)
             }
             self.isLoading = false
         } catch {
             self.isLoading = true
-            print("There was an error getting the data: \(error)")
+            print(ErrorComments.response.rawValue, error)
         }
     }
 }

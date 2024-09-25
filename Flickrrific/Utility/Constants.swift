@@ -26,4 +26,11 @@ enum ErrorComments: String {
 
 enum SystemImages: String {
     case photo = "photo"
+    case search = "magnifyingglass"
+}
+
+enum Labels: String {
+    case noData = "There was no description for this item"
+    case search = "Search..."
+    case noUsername = "Unknown User"
 }

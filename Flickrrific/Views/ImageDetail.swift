@@ -28,6 +28,36 @@ struct ImageDetail: View {
                             .detailImageViewModifier()
                     }
                 }
+                
+                VStack(alignment: .center) {
+                    Text(data.title ?? "")
+                        .font(.title)
+                        .fontWeight(.semibold)
+                        .padding(.bottom)
+                        .shadow(color: .black.opacity(0.3), radius: 10, x: 0, y: 5)
+                    
+                    Text(data.description ?? Labels.noData.rawValue)
+                        .frame(alignment: .leading)
+                        .font(.headline)
+                        .fontWeight(.medium)
+                        .padding(.bottom)
+                        .padding(.horizontal)
+                    
+                    Text("Author: " + (data.author ?? ""))
+                        .padding(.bottom)
+                        .padding(.horizontal)
+                    
+                    if let datePublished = data.published {
+                        Text("Published: \(Helpers.shared.formatDate(datePublished))")
+                        .padding(.bottom)
+                    }
+                
+                //  Share Button
+//                if let urlString = data.media?.m, let imageUrl = URL(string: urlString) {
+//                    ShareLink(item: )
+                    
+                    
+                }
             }
         }
     }

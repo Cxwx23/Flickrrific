@@ -13,8 +13,8 @@ struct SearchBar: View {
     var body: some View {
         HStack {
             HStack {
-                Image(systemName: "magnifyingglass")
-                TextField("Search...", text: $searchText)
+                Image(systemName: SystemImages.search.rawValue)
+                TextField(Labels.search.rawValue, text: $searchText)
                     .padding(8)
             }
             .padding(10)

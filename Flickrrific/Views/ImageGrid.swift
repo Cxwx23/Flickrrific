@@ -44,7 +44,7 @@ struct ImageGrid: View {
         let key = urlString
         if Cache.shared.getImage(for: key) == nil, !urlString.isEmpty {
             guard let url = URL(string: urlString) else {
-                print("Bad URL")
+                print(ErrorComments.url.rawValue)
                 return
             }
             URLSession.shared.dataTask(with: url) { data, response, error in

@@ -45,7 +45,7 @@ struct ContentView: View {
         do {
             try await viewModel.getImageData(url: searchUrl)
         } catch {
-            print("Error getting data")
+            print(ErrorComments.response.rawValue)
         }
     }
 }
