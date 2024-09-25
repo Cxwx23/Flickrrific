@@ -10,6 +10,7 @@ import XCTest
 
 final class FlickrrificTests: XCTestCase {
     private var apiManager: ApiManagerType?
+    var testResponse: ResponseModel?
 
     override func setUpWithError() throws {
         apiManager = MockAPIManager.mockShared
@@ -20,8 +21,6 @@ final class FlickrrificTests: XCTestCase {
     }
 
     func testGetDataTitles() throws {
-        var testResponse: ResponseModel?
-        
         Task {
             do {
                 testResponse = try await apiManager?.getData(type: ResponseModel.self, url: "")
@@ -36,8 +35,6 @@ final class FlickrrificTests: XCTestCase {
     }
     
     func testGetDataLinks() throws {
-        var testResponse: ResponseModel?
-        
         Task {
             do {
                 testResponse = try await apiManager?.getData(type: ResponseModel.self, url: "")
@@ -52,8 +49,6 @@ final class FlickrrificTests: XCTestCase {
     }
     
     func testGetDataDescription() throws {
-        var testResponse: ResponseModel?
-        
         Task {
             do {
                 testResponse = try await apiManager?.getData(type: ResponseModel.self, url: "")
@@ -68,8 +63,6 @@ final class FlickrrificTests: XCTestCase {
     }
     
     func testGetDataPublished() throws {
-        var testResponse: ResponseModel?
-        
         Task {
             do {
                 testResponse = try await apiManager?.getData(type: ResponseModel.self, url: "")
@@ -84,8 +77,6 @@ final class FlickrrificTests: XCTestCase {
     }
     
     func testGetDataAuthor() throws {
-        var testResponse: ResponseModel?
-        
         Task {
             do {
                 testResponse = try await apiManager?.getData(type: ResponseModel.self, url: "")
