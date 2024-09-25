@@ -8,9 +8,18 @@
 import Foundation
 
 // MARK: - URLs
-enum Url: String {
-    case exampleUrl = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1&tags=boxer dog"
-    case apiUrl = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1&tags="
+enum Url {
+    case exampleUrl
+    case apiUrl(query: String)
+    
+    var value: String {
+        switch self {
+        case .exampleUrl:
+            return "https://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1&tags=boxer dog"
+        case .apiUrl(let query):
+            return "https://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1&tags=\(query)"
+        }
+    }
 }
 
 // MARK: - Error Keys

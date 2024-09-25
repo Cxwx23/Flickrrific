@@ -9,7 +9,7 @@ import XCTest
 @testable import Flickrrific
 
 final class FlickrrificTests: XCTestCase {
-    private var apiManager: MockAPIManager?
+    private var apiManager: ApiManagerType?
 
     override func setUpWithError() throws {
         apiManager = MockAPIManager.mockShared

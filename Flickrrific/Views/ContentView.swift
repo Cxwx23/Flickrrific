@@ -10,9 +10,9 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var viewModel = ImageViewModel()
     @State var searchText = ""
-    
+
     var searchUrl: String {
-        searchText.isEmpty ? Url.apiUrl.rawValue : Url.apiUrl.rawValue + searchText
+        Url.apiUrl(query: searchText).value
     }
     
     var body: some View {

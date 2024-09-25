@@ -7,14 +7,11 @@
 
 import Foundation
 
+/// <#Description#>: The ViewModel takes the URL string for the API as a parameter and populates the data array after calling the getData function.
 class ImageViewModel: ObservableObject {
     @Published var dataArray = [ImageDataModel]()
     @Published var isLoading: Bool = false
     
-    /**
-     Parameter:     The URL for the API as a String
-     Result: :          Sets the values for the Image data Array
-     */
     @MainActor
     func getImageData(url: String) async throws {
         do {

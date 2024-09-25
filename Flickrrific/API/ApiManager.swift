@@ -16,7 +16,7 @@ class ApiManager: ApiManagerType {
     private init() {}
     
     func getData<T: Codable>(type: T.Type, url: String) async throws -> T? {
-        guard let url = URL(string: Url.apiUrl.rawValue + url) else {
+        guard let url = URL(string: url) else {
             throw ApiError.urlError
         }
         
