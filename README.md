@@ -9,6 +9,7 @@ Flickriffic is an iOS app build using Swift and SwiftUI using MVVM architecture.
 - Includes Unit Testing
 - Includes a share button on the detail view, for sharing images and data.
 - Has a pleasing User Interface design utilizing Apples Human Interface Guidelines.
+- This app works well on iOS 17 and iOS 18.
 
 ## Project Structure
 - Utility: Contains helper functions, constants, extensions, image caching, and ViewModifiers
