@@ -51,12 +51,6 @@ struct ImageDetail: View {
                         Text("Published: \(Helpers.shared.formatDate(datePublished))")
                         .padding(.bottom)
                     }
-                
-                //  Share Button
-//                if let urlString = data.media?.m, let imageUrl = URL(string: urlString) {
-//                    ShareLink(item: )
-                    
-                    
                 }
             }
         }

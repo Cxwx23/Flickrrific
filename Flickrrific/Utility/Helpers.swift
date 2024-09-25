@@ -11,6 +11,7 @@ class Helpers {
     static let shared = Helpers()
     private init() {}
     
+    //  Gets the date in the ISO8601 format and sets the date and time styles to .short
     func formatDate(_ dateString: String) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"

@@ -21,6 +21,8 @@
 		86982FAD2CA3D33E00283ADE /* FlickrrificTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86982FAC2CA3D33E00283ADE /* FlickrrificTests.swift */; };
 		86982FB72CA3D33E00283ADE /* FlickrrificUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86982FB62CA3D33E00283ADE /* FlickrrificUITests.swift */; };
 		86982FB92CA3D33E00283ADE /* FlickrrificUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86982FB82CA3D33E00283ADE /* FlickrrificUITestsLaunchTests.swift */; };
+		86A7C6F92CA462E500DEDFAD /* MockApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CB3FEC2CA456FE002C5C2D /* MockApiManager.swift */; };
+		86A7C6FA2CA4630800DEDFAD /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8611CBA22CA3D6B800892576 /* ApiManager.swift */; };
 		86B299B62CA3FF5700043AE2 /* ImageViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B299B52CA3FF5700043AE2 /* ImageViewModifier.swift */; };
 		86B299BA2CA40CDB00043AE2 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B299B92CA40CDB00043AE2 /* SearchBar.swift */; };
 		86B299C22CA41A8C00043AE2 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B299C12CA41A8C00043AE2 /* Title.swift */; };
@@ -365,9 +367,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86A7C6F92CA462E500DEDFAD /* MockApiManager.swift in Sources */,
 				86982FAD2CA3D33E00283ADE /* FlickrrificTests.swift in Sources */,
 				8611CBAA2CA3D75C00892576 /* ImageViewModel.swift in Sources */,
 				8611CBA12CA3D64900892576 /* ImageModel.swift in Sources */,
+				86A7C6FA2CA4630800DEDFAD /* ApiManager.swift in Sources */,
 				8611CBA72CA3D6F200892576 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
