@@ -36,11 +36,8 @@ struct ImageDetail: View {
                         .padding(.bottom)
                         .shadow(color: .black.opacity(0.3), radius: 10, x: 0, y: 5)
                     
-                    Text(data.description ?? Labels.noData.rawValue)
-                        .frame(alignment: .leading)
-                        .font(.headline)
-                        .fontWeight(.medium)
-                        .padding(.bottom)
+                    WebView(htmlContent: data.description ?? "<html><body><h1>No Data</h1></body></html>")
+                        .frame(height: 200, alignment: .center)
                         .padding(.horizontal)
                     
                     Text("Author: " + (data.author ?? ""))
