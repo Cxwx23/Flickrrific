@@ -33,4 +33,23 @@ class Helpers {
             .capitalized
         return username
     }
+    
+    //  Gets the image size from the HTML
+    func getImageSize(from html: String?) -> String? {
+        guard let html = html else { return nil }
+        
+        // Regex pattern to extract width and height from the image tag
+        let pattern = "<img[^>]*width=\"(\\d+)\"[^>]*height=\"(\\d+)\""
+        guard let regex = try? NSRegularExpression(pattern: pattern, options: []) else { return nil }
+        let nsString = html as NSString
+        let results = regex.matches(in: html, options: [], range: NSRange(location: 0, length: nsString.length))
+        
+        if let match = results.first {
+            let width = nsString.substring(with: match.range(at: 1))
+            let height = nsString.substring(with: match.range(at: 2))
+            return "Width: \(width) px, Height: \(height) px"
+        }
+        
+        return nil
+    }
 }
