@@ -27,10 +27,9 @@ class Helpers {
     func usernameCleanup(author: String) -> String {
         let username = author
             .replacingOccurrences(of: "nobody@flickr.com (\"", with: "")
-            .replacingOccurrences(of: ")", with: "")
             .replacingOccurrences(of: "\")", with: "")
             .replacingOccurrences(of: "(", with: "")
-
+            .replacingOccurrences(of: ")", with: "")
             .capitalized
         return username
     }

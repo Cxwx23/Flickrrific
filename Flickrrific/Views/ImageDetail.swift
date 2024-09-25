@@ -40,9 +40,10 @@ struct ImageDetail: View {
                         .frame(height: 200, alignment: .center)
                         .padding(.horizontal)
                     
-                    Text("Author: " + (data.author ?? ""))
-                        .padding(.bottom)
-                        .padding(.horizontal)
+                    Text("Author: \(Helpers.shared.usernameCleanup(author: data.author ?? Labels.noData.rawValue))")
+                        .fixedSize(horizontal: false, vertical: true)
+                        .padding(.bottom
+                        )
                     
                     if let datePublished = data.published {
                         Text("Published: \(Helpers.shared.formatDate(datePublished))")
